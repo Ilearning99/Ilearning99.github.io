@@ -992,7 +992,34 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><style>/*GitHub*/
+</style><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js'></script><script>MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX", "output/HTML-CSS", "output/NativeMML"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    processEnvironments: true,
+    ignoreClass: ".*|",
+    processClass: "arithmatex"
+  },
+  TeX: {
+    extensions: ["AMSmath.js", "AMSsymbols.js"],
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    equationNumbers: {
+      autoNumber: "AMS",
+    },
+    unicode: {
+      fonts: "STIXGeneral,'Arial Unicode MS'"
+    }
+  },
+  showProcessingMessages: false,
+  messageStyle: 'none'
+});
+</script><style>/*GitHub*/
 .codehilite {background-color:#fff;color:#333333;}
 .codehilite .hll {background-color:#ffffcc;}
 .codehilite .c{color:#999988;font-style:italic}
@@ -1055,6 +1082,33 @@ body .markdown-body
 .codehilite .vi{color:teal}
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
-</style><title>cg0_basicinfo</title></head><body><article class="markdown-body"><h1 id="_1">计算机图形学基础<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+</style><title>cg0_basicinfo</title></head><body><article class="markdown-body"><h1>计算机图形学基础</h1>
 <p>这是学堂在线课程Foundations of Computer Graphics课程中ppt和作业的相关笔记</p>
-<h2 id="_2"><a class="headerlink" href="#_2" title="Permanent link"></a></h2></article></body></html>
+<h2>数学基础</h2>
+<p>计算机图形学的数学基础是矩阵与向量运算，因为计算机图形学主要涉及到物体表面点的平移和旋转，空间中的点可以作为向量，平移和旋转可以看作对对应矩阵和向量的乘积。</p>
+<h3>向量基本运算</h3>
+<p>向量运算主要包括相加、点乘、叉乘</p>
+<ul>
+<li>
+<p>叉乘</p>
+</li>
+<li>
+<p>定义：</p>
+</li>
+</ul>
+<div>
+<div class="MathJax_Preview">\mathbf{x} \times \mathbf{y} = 
+\begin{matrix}
+   x_a &amp; y_a &amp; z_a
+\end{matrix}
+</div>
+<script type="math/tex; mode=display">\mathbf{x} \times \mathbf{y} = 
+\begin{matrix}
+   x_a & y_a & z_a
+\end{matrix}
+</script>
+</div>
+<p><span><span class="MathJax_Preview">\Gamma</span><script type="math/tex">\Gamma</script></span></p>
+<ul>
+<li></li>
+</ul></article></body></html>
