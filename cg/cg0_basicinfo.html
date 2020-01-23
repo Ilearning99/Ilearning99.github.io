@@ -1082,33 +1082,71 @@ body .markdown-body
 .codehilite .vi{color:teal}
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
-</style><title>cg0_basicinfo</title></head><body><article class="markdown-body"><h1>计算机图形学基础</h1>
+</style><title>cg0_basicinfo</title></head><body><article class="markdown-body"><h1 id="_1">计算机图形学基础<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
 <p>这是学堂在线课程Foundations of Computer Graphics课程中ppt和作业的相关笔记</p>
-<h2>数学基础</h2>
+<h2 id="_2">数学基础<a class="headerlink" href="#_2" title="Permanent link"></a></h2>
 <p>计算机图形学的数学基础是矩阵与向量运算，因为计算机图形学主要涉及到物体表面点的平移和旋转，空间中的点可以作为向量，平移和旋转可以看作对对应矩阵和向量的乘积。</p>
-<h3>向量基本运算</h3>
+<h3 id="_3">向量基本运算<a class="headerlink" href="#_3" title="Permanent link"></a></h3>
 <p>向量运算主要包括相加、点乘、叉乘</p>
 <ul>
-<li>
-<p>叉乘</p>
-</li>
-<li>
-<p>定义：</p>
-</li>
+<li>叉乘</li>
 </ul>
-<div>
-<div class="MathJax_Preview">\mathbf{x} \times \mathbf{y} = 
+<ol>
+<li>定义：</li>
+</ol>
+<div class="arithmatex">\[\vec{a} \times \vec{b} = 
+\left[
 \begin{matrix}
-   x_a &amp; y_a &amp; z_a
+   \vec{i} &amp; \vec{j} &amp; \vec{k} \\
+   x_a &amp; y_a &amp; z_a \\
+   x_b &amp; y_b &amp; z_b
 \end{matrix}
-</div>
-<script type="math/tex; mode=display">\mathbf{x} \times \mathbf{y} = 
-\begin{matrix}
-   x_a & y_a & z_a
-\end{matrix}
-</script>
-</div>
-<p><span><span class="MathJax_Preview">\Gamma</span><script type="math/tex">\Gamma</script></span></p>
+\right] = (y_a z_b - z_a y_b) \vec{i} + (z_a x_b - x_a z_b) \vec{j} + (x_a y_b - y_a x_b) \vec{k}
+\]</div>
+<ol start="2">
+<li>
+<p>性质：</p>
 <ul>
-<li></li>
-</ul></article></body></html>
+<li>长度：<span class="arithmatex">\(|\vec{a}||\vec{b}|sin\phi\)</span>，其中<span class="arithmatex">\(\phi\)</span>是<span class="arithmatex">\(\vec{a}\)</span>和<span class="arithmatex">\(\vec{b}\)</span>之间的夹角</li>
+<li>方向：与<span class="arithmatex">\(\vec{a}\)</span>和<span class="arithmatex">\(\vec{b}\)</span>垂直，满足右手系的关系</li>
+</ul>
+</li>
+<li>
+<p>用处：用作构造直角坐标系</p>
+</li>
+</ol>
+<p>例如，通过向量<span class="arithmatex">\(\vec{a}\)</span>和<span class="arithmatex">\(\vec{b}\)</span>，构造直角坐标系<span class="arithmatex">\(\vec{u},\vec{v},\vec{w}\)</span></p>
+<p>将<span class="arithmatex">\(\vec{u}\)</span>与<span class="arithmatex">\(\vec{a}\)</span>的方向相关，<span class="arithmatex">\(\vec{v}\)</span>与<span class="arithmatex">\(\vec{b}\)</span>的方向相关，得到</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\vec{u} &amp;= \frac{\vec{a}}{|\vec{a}|} \\
+\vec{w} &amp;= \frac{\vec{a} \times \vec{b}}{|\vec{a} \times \vec{b}|} \\
+\vec{v} &amp;= \vec{w} \times \vec{u}
+\end{aligned}
+\]</div>
+<ol start="4">
+<li>矩阵表示：</li>
+</ol>
+<p>矩阵表示更便于叉乘与其他变换操作相统一</p>
+<div class="arithmatex">\[
+\vec{a} \times \vec{b} = 
+\left[
+\begin{matrix}
+    0 &amp; -z_a &amp; y_a \\
+    z_a &amp; 0 &amp; -x_a \\
+    -y_a &amp; x_a &amp; 0
+\end{matrix}
+\right]
+\left[ 
+\begin{matrix}
+x_b \\ y_b \\ z_b
+\end{matrix} 
+\right] = A^* \vec{b}
+\]</div>
+<ol start="5">
+<li>疑问：由于现阶段知识的缺陷，我有以下疑问：<ul>
+<li>叉乘运算目前看只存在于3维空间，不像点乘是存在于任意维空间，因此这个概念看上去不完整，没有拓展到高维</li>
+<li>叉乘的定义是通过行列式运算定义的，这里像一个巧合，那么，是先有行列式运算，发现了相应的性质然后再定义了叉乘，还是需要有对应性质的叉乘，然后用到了行列式呢？</li>
+</ul>
+</li>
+</ol></article></body></html>
