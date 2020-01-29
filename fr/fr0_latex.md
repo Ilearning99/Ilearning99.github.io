@@ -27,3 +27,5 @@ $$
 \vec{x} &= \vec{y} \times \vec{z}
 \end{aligned}
 ```
+
+符号下方加下标：$\max\limits_{i=0}^n$ (\max\limits_{i=0}^n)
