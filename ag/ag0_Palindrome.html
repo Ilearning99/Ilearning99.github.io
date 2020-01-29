@@ -1082,52 +1082,85 @@ body .markdown-body
 .codehilite .vi{color:teal}
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
-</style><title>ag0_Palindrome</title></head><body><article class="markdown-body"><h1 id="_1">回文串<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
-<div class="codehilite"><pre><span class="cp">#include&lt;cstdio&gt;</span>
-<span class="cp">#include&lt;algorithm&gt;</span>
-<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="cp">#define maxn 1000010</span>
-
-<span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
-<span class="kt">char</span> <span class="n">A</span><span class="p">[</span><span class="n">maxn</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">];</span>
-<span class="kt">int</span> <span class="n">f</span><span class="p">[</span><span class="n">maxn</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">];</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">T</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">ans</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">center</span><span class="p">,</span><span class="n">right</span><span class="p">;</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">T</span><span class="p">);</span>
-    <span class="k">while</span><span class="p">(</span><span class="n">T</span><span class="o">--</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="n">str</span><span class="p">);</span>
-        <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;@&#39;</span><span class="p">;</span>
-        <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;#&#39;</span><span class="p">;</span>
-        <span class="n">t</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span>
-        <span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">A</span><span class="p">[</span><span class="n">t</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-            <span class="n">A</span><span class="p">[</span><span class="n">t</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;#&#39;</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-        <span class="n">right</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-        <span class="n">A</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;$&#39;</span><span class="p">;</span>
-        <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">t</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">right</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">(</span><span class="n">right</span><span class="o">-</span><span class="n">i</span><span class="p">,</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">center</span><span class="o">-</span><span class="n">i</span><span class="p">]);</span>
-            <span class="p">}</span>
-            <span class="k">while</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-                <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">right</span><span class="o">&lt;</span><span class="n">i</span><span class="o">+</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
-                <span class="n">right</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-                <span class="n">center</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="n">ans</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-        <span class="p">}</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">ans</span><span class="p">);</span>
+</style><title>ag0_Palindrome</title></head><body><article class="markdown-body"><h1 id="_1">最长回文子串<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+<h2 id="_2">回文串<a class="headerlink" href="#_2" title="Permanent link"></a></h2>
+<p>回文串是正读和反读都相同的字符串</p>
+<p>例如，&rdquo;a&rdquo;，&rdquo;aba&rdquo;，&rdquo;abba&rdquo;是回文串，而&rdquo;abc&rdquo;不是回文串。</p>
+<h3 id="_3">判断回文串<a class="headerlink" href="#_3" title="Permanent link"></a></h3>
+<p>回文串是一个对称串，因此判断回文串只需从首尾比较对称位置是否相等即可。</p>
+<p>例题：</p>
+<p><a href="https://leetcode-cn.com/problems/valid-palindrome/">leetcode-125. 验证回文串</a></p>
+<div class="codehilite"><pre><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">j</span><span class="o">=</span><span class="n">cvec</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">j</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="n">j</span><span class="o">--</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">cvec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">cvec</span><span class="p">[</span><span class="n">j</span><span class="p">]){</span>
+        <span class="n">flag</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">flag</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+</pre></div>
+
+<h3 id="_4">求解最长回文子串<a class="headerlink" href="#_4" title="Permanent link"></a></h3>
+<p>目的：寻找目标字符串中，所有连续子串中，是回文串且长度最长的子串长度，或者求回文子串个数。</p>
+<p>用途：算法题、面试题中经常出现，但是并不清楚具体的用途。</p>
+<h3 id="_5">暴力<a class="headerlink" href="#_5" title="Permanent link"></a></h3>
+<p>枚举所有子串，判断是否回文串。</p>
+<p>复杂度：<span class="arithmatex">\(O(n^3)\)</span></p>
+<h3 id="_6">枚举中心<a class="headerlink" href="#_6" title="Permanent link"></a></h3>
+<p>考虑暴力方法，我们发现其中有很多重复计算，比如，判断字符串str[i&hellip;j]是否为回文串，我们需要判断str[i+1&hellip;j-1]是否为回文串，而枚举到位置i+1时，我们会重复判断一次str[i+1&hellip;j-1]是否为回文串。</p>
+<p>考虑枚举以每个位置为中心的最长回文串，枚举位置i，str[i-l,&hellip;,i,&hellip;,i+l]不是回文串，那么就不用再判断子串str[i-(l+1),&hellip;,i,&hellip;,i+(l+1)]，而如果str[i-l,&hellip;,i,&hellip;,i+l]时回文串，判断子串str[i-(l+1),&hellip;,i,&hellip;,i+(l+1)]是否为回文串，只需要判断str[i-(l+1)]是否等于str[i+(l+1)]。</p>
+<p>复杂度：<span class="arithmatex">\(O(n^2)\)</span></p>
+<p>例题：</p>
+<p>统计回文子串个数</p>
+<p><a href="https://leetcode-cn.com/problems/palindromic-substrings/">leetcode-647. 回文子串</a></p>
+<div class="codehilite"><pre><span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<span class="kt">int</span> <span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="o">&gt;=</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+            <span class="n">ans</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="o">&gt;=</span><span class="mi">0</span><span class="o">&amp;&amp;</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="n">n</span><span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+            <span class="n">ans</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+</pre></div>
+
+<h3 id="_7">技巧<a class="headerlink" href="#_7" title="Permanent link"></a></h3>
+<p>如上，求取回文子串需要分两种情况，一种回文串长度为奇数只有一个中心元素，一种是回文串长度为偶数，有两个中心元素。</p>
+<p>在每个字符中间增加一个&rsquo;#&rsquo;，这样奇回文串，仍然是奇回文串，如&rdquo;aba&rdquo;-&gt;&rdquo;#a#b#a#&rdquo;，偶回文串，转化为了奇回文串，如&rdquo;aa&rdquo;-&gt;&rdquo;#a#a#&rdquo;，而原回文串的长度<span class="arithmatex">\(n\)</span>，和新回文串长度<span class="arithmatex">\(n'\)</span>，满足<span class="arithmatex">\(n=\lfloor \frac{n}{2} \rfloor\)</span></p>
+<h3 id="_8">终极算法<a class="headerlink" href="#_8" title="Permanent link"></a></h3>
+<p>虽然从中间位置枚举回文串，能够避免很多暴力枚举过程中的重复计算，但是通过回文串的性质，我们可以利用之前的中间结果，进一步提升算法效率。</p>
+<p>假设对于每个位置i，以它为中心的最长回文串为，［i-f[i],&hellip;,i,&hellip;,i+f[i]]</p>
+<p>例如，当前枚举到位置i+1，我们要求解f[i+1]，我们定义<span class="arithmatex">\(right=\max\limits_{j=0}^i {j+f[j]}\)</span>，对应回文串中心定义为center，此时其实已经有了[i+1,right]这个之间的字符串信息，<span class="arithmatex">\(f[i+1]&gt;=min(0,right-(i+1),f[2*center-(i+1)])\)</span>，并且，如果right-(i+1)&gt;f[2<em>center-(i+1)]，则f[i+1]=f[2</em>center-(i+1)]。</p>
+<p>复杂度：<span class="arithmatex">\(O(n)\)</span>。由于每次枚举，只有三种情况，f[i+1]&lt;=right-(i+1)都是O(1)复杂度，而f[i+1]&gt;right-(i+1)会更新right，最终right&lt;=n，累计总操作数小于n。</p>
+<p>例题：</p>
+<p><a href="http://hihocoder.com/problemset/problem/1032">hiho-1032 : 最长回文子串</a></p>
+<div class="codehilite"><pre><span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">right</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">A</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;$&#39;</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">t</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">right</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">(</span><span class="n">right</span><span class="o">-</span><span class="n">i</span><span class="p">,</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">center</span><span class="o">-</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">right</span><span class="o">&lt;</span><span class="n">i</span><span class="o">+</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">{</span>
+        <span class="n">right</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">center</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">ans</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 <span class="p">}</span>
 </pre></div></article></body></html>

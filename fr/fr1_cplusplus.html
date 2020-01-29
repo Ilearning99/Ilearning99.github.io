@@ -1089,6 +1089,18 @@ body .markdown-body
 <span class="n">sort</span><span class="p">(</span><span class="n">vector</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">vector</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
 </pre></div>
 
+<p>是否是数字(0-9)：
+<div class="codehilite"><pre><span class="cp">#include&lt;cctype&gt;</span>
+<span class="n">isdigit</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</pre></div></p>
+<p>是否是字母(a-zA-Z)：
+<div class="codehilite"><pre><span class="cp">#include&lt;cctype&gt;</span>
+<span class="n">isalpha</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</pre></div></p>
+<p>转为小写字母：
+<div class="codehilite"><pre><span class="cp">#include&lt;cctype&gt;</span>
+<span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">tolower</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</pre></div></p>
 <h2 id="_1">指针相关<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
 <p>定义多个指针，*跟在变量名前：</p>
 <div class="codehilite"><pre><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="o">*</span><span class="n">b</span><span class="p">,</span><span class="o">*</span><span class="n">c</span><span class="p">;</span>

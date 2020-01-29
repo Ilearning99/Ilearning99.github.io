@@ -8,6 +8,8 @@
 
 角度符号：$\angle$ (\angle)
 
+取整符号：$\lfloor n \rfloor$ (\lfloor n \rfloor)
+
 等式组：
 
 $$
