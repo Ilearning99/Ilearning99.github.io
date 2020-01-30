@@ -14,3 +14,9 @@
 
 The god of wealth is here. I wish you fortune from all directions.
 
+2020.01.30
+
+新年就像是书里的一个章节，等待着我们去书写。
+
+The New year is like a chaper in a book, waiting to be written.
+
