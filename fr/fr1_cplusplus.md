@@ -27,6 +27,15 @@ isalpha(str[i]);
 str[i]=tolower(str[i]);
 ```
 
+vector尾部增加删除元素：
+```.c
+#include<vector>
+using namespace std;
+vector<int> vint;
+vint.push_back(1);
+vint.pop_back();
+```
+
 ## 指针相关
 
 定义多个指针，*跟在变量名前：
@@ -34,3 +43,9 @@ str[i]=tolower(str[i]);
 ```.c
 int *a,*b,*c;
 ```
+
+## 常量
+
+整数最大值、最小值：INT_MAX INT_MIN
+
+空指针：nullptr（关键字）
