@@ -36,6 +36,26 @@ vint.push_back(1);
 vint.pop_back();
 ```
 
+string字符串初始化：
+```.c
+#include<string>
+using namespace std;
+
+string s(10,' '); // 10个' '构成的字符串
+```
+
+queue的基本操作
+```.c
+#include<queue>
+using namespace std;
+
+queue<int> que;
+que.push(1); // 队尾加入数据
+que.front(); // 队首元素
+que.pop(); // 队首删除元素
+que.back(); // 返回队尾元素
+```
+
 ## 指针相关
 
 定义多个指针，*跟在变量名前：
