@@ -96,7 +96,7 @@ return ans;
 center=0;
 right=0;
 A[t]='$';
-for(i=0;i<t;i++)
+for(i=1;i<t;i++)
 {
     f[i]=0;
     if(i<right)

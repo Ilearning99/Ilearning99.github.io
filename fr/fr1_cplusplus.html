@@ -1108,11 +1108,14 @@ body .markdown-body
 <span class="n">vint</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="n">vint</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
 </pre></div></p>
-<p>string字符串初始化：
+<p>string字符串基本操作：
 <div class="codehilite"><pre><span class="cp">#include&lt;string&gt;</span>
 <span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<span class="n">string</span> <span class="nf">s</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="sc">&#39; &#39;</span><span class="p">);</span> <span class="c1">// 10个&#39; &#39;构成的字符串</span>
+<span class="n">string</span> <span class="nf">s</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="sc">&#39; &#39;</span><span class="p">);</span> <span class="c1">// 初始化为10个&#39; &#39;构成的字符串</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="n">s</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span> <span class="c1">// 返回const char*型指针</span>
+<span class="n">s</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">len</span><span class="p">);</span> <span class="c1">// 返回从id开始，len长度的字符串</span>
+<span class="k">return</span> <span class="n">s</span><span class="o">==</span><span class="n">s1</span><span class="p">;</span> <span class="c1">// 比较两个字符串是否相等</span>
 </pre></div></p>
 <p>queue的基本操作
 <div class="codehilite"><pre><span class="cp">#include&lt;queue&gt;</span>
@@ -1120,9 +1123,97 @@ body .markdown-body
 
 <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">que</span><span class="p">;</span>
 <span class="n">que</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 队尾加入数据</span>
-<span class="n">que</span><span class="p">.</span><span class="n">front</span><span class="p">();</span> <span class="c1">// 队首元素</span>
+<span class="kt">int</span> <span class="n">h</span><span class="o">=</span><span class="n">que</span><span class="p">.</span><span class="n">front</span><span class="p">();</span> <span class="c1">// 队首元素</span>
 <span class="n">que</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span> <span class="c1">// 队首删除元素</span>
 <span class="n">que</span><span class="p">.</span><span class="n">back</span><span class="p">();</span> <span class="c1">// 返回队尾元素</span>
+</pre></div></p>
+<p>set的基本操作
+<div class="codehilite"><pre><span class="cp">#include&lt;set&gt;</span>
+<span class="cp">#include&lt;vector&gt;</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">mset</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">());</span> <span class="c1">//set初始化</span>
+<span class="n">mset</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">//插入set</span>
+<span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">iter</span><span class="o">=</span><span class="n">mset</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">//查找元素</span>
+</pre></div></p>
+<p>deque双端队列基本操作
+<div class="codehilite"><pre><span class="cp">#include&lt;deque&gt;</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">deque</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">d</span><span class="p">;</span>
+<span class="n">d</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// 队尾插入元素</span>
+<span class="n">d</span><span class="p">.</span><span class="n">push_front</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// 队首插入元素</span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">d</span><span class="p">.</span><span class="n">front</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 队首元素</span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">d</span><span class="p">.</span><span class="n">back</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 队尾元素</span>
+<span class="n">d</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span> <span class="c1">// 从队尾弹出元素</span>
+<span class="n">d</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span> <span class="c1">// 从队首弹出元素</span>
+</pre></div></p>
+<p>priority_queue优先队列基本操作
+<div class="codehilite"><pre><span class="cp">#include&lt;queue&gt;</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">priority_queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pq</span><span class="p">;</span> <span class="c1">// 默认最大堆</span>
+<span class="n">pq</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 优先队列加入数据</span>
+<span class="kt">int</span> <span class="n">h</span><span class="o">=</span><span class="n">pq</span><span class="p">.</span><span class="n">top</span><span class="p">();</span> <span class="c1">// 返回堆顶元素</span>
+<span class="n">pq</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span> <span class="c1">// 弹出堆顶元素</span>
+
+<span class="k">struct</span> <span class="n">cmp</span><span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">operator</span><span class="p">()(</span><span class="kt">int</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span><span class="o">&amp;</span><span class="n">b</span><span class="p">){</span>
+        <span class="k">return</span> <span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="n">priority_queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span><span class="n">cmp</span><span class="o">&gt;</span> <span class="n">pqmin</span><span class="p">;</span> <span class="c1">//自定义比较函数(小顶堆)</span>
+</pre></div></p>
+<p>map的遍历
+<div class="codehilite"><pre><span class="cp">#include&lt;map&gt;</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">mint</span><span class="p">;</span>
+<span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">iter</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="n">iter</span><span class="o">=</span><span class="n">mint</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">iter</span><span class="o">!=</span><span class="n">mint</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="n">iter</span><span class="o">++</span><span class="p">){</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">iter</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">,</span><span class="n">iter</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">mint</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">key</span><span class="p">);</span> <span class="c1">// 删除对应键值对</span>
+</pre></div></p>
+<p>二分查找
+<div class="codehilite"><pre><span class="cp">#include&lt;algorithm&gt;</span>
+<span class="cp">#include&lt;vector&gt;</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">target</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">low</span><span class="p">,</span><span class="n">up</span><span class="p">;</span>
+<span class="n">low</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">target</span><span class="p">);</span> <span class="c1">//第一个大于等于target的值</span>
+<span class="n">up</span><span class="o">=</span><span class="n">upper_bound</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">target</span><span class="p">);</span> <span class="c1">//第一个大于target的值</span>
+</pre></div></p>
+<p>reverse反转数组
+<div class="codehilite"><pre><span class="cp">#include&lt;algorithm&gt;</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+<span class="n">reverse</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</pre></div></p>
+<p>字符串与数字相互转换
+<div class="codehilite"><pre><span class="cp">#include&lt;sstream&gt;</span>
+<span class="cp">#include&lt;string&gt;</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// 数字转字符串</span>
+<span class="kt">double</span> <span class="n">num</span><span class="o">=</span><span class="mf">123.32</span><span class="p">;</span>
+<span class="n">string</span> <span class="n">str</span><span class="p">;</span>
+<span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
+<span class="n">ss</span><span class="o">&lt;&lt;</span><span class="n">num</span><span class="p">;</span>
+<span class="n">ss</span><span class="o">&gt;&gt;</span><span class="n">str</span><span class="p">;</span>
+<span class="c1">// 字符串转数字</span>
+<span class="n">ss</span><span class="o">&lt;&lt;</span><span class="n">str</span><span class="p">;</span>
+<span class="n">ss</span><span class="o">&gt;&gt;</span><span class="n">num</span><span class="p">;</span>
+<span class="c1">// 字符串转整型数字</span>
+<span class="n">string</span> <span class="n">tmp</span><span class="o">=</span><span class="s">&quot;123&quot;</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">tmpnum</span><span class="o">=</span><span class="n">atoi</span><span class="p">(</span><span class="n">tmp</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+</pre></div></p>
+<p>内置函数
+<div class="codehilite"><pre><span class="n">__builtin_popcount</span><span class="p">(</span><span class="n">n</span><span class="p">);</span> <span class="c1">// 统计n中有多少个1</span>
 </pre></div></p>
 <h2 id="_1">指针相关<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
 <p>定义多个指针，*跟在变量名前：</p>
