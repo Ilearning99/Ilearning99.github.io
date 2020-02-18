@@ -1082,26 +1082,68 @@ body .markdown-body
 .codehilite .vi{color:teal}
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
-</style><title>fr0_latex</title></head><body><article class="markdown-body"><h1 id="latex">LaTex备忘<a class="headerlink" href="#latex" title="Permanent link"></a></h1>
-<h2 id="_1">数学公式相关<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
-<p>平行符号：<span class="arithmatex">\(\parallel\)</span> (\parallel)</p>
-<p>垂直符号：<span class="arithmatex">\(\perp\)</span> (\perp)</p>
-<p>角度符号：<span class="arithmatex">\(\angle\)</span> (\angle)</p>
-<p>取整符号：<span class="arithmatex">\(\lfloor n \rfloor\)</span> (\lfloor n \rfloor)</p>
-<p>空格符号：<span class="arithmatex">\(\quad\)</span> (\quad)</p>
-<p>等式组：</p>
+</style><title>opt0_dual</title></head><body><article class="markdown-body"><h1 id="_1">原问题与对偶问题<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+<h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link"></a></h2>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">产品I</th>
+<th align="center">产品II</th>
+<th align="center">每天可用时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">占用A机时</td>
+<td align="center">0</td>
+<td align="center">5</td>
+<td align="center">15</td>
+</tr>
+<tr>
+<td align="center">占用B机时</td>
+<td align="center">6</td>
+<td align="center">2</td>
+<td align="center">24</td>
+</tr>
+<tr>
+<td align="center">利润</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>表格所示是某厂基本信息情况，该厂有两种类型的机器，目前可生产两种类型的产品，每天可以使用的机器资源，生产产品的消耗和利润，如上表所示。</p>
+<h3 id="_3">工厂生产方案<a class="headerlink" href="#_3" title="Permanent link"></a></h3>
+<p>作为工厂的管理人员，我们每天需要设计最优的生产方案，使得每天的收益最大。</p>
+<p>记<span class="arithmatex">\(x_1\)</span>,<span class="arithmatex">\(x_2\)</span>为每天产品I和产品II的生产数量，优化问题如下：</p>
 <div class="arithmatex">\[
 \begin{aligned}
-\vec{z} &amp;= \vec{a} \\
-\vec{y} &amp;= \frac{\vec{a} \times \vec{b}}{|\vec{a} \times \vec{b}|}  \\
-\vec{x} &amp;= \vec{y} \times \vec{z}
+\mathop{max}\quad &amp; 2x_1+x_2 \\
+s.t.\quad &amp; x_2 \le 15 \\
+&amp; 6 x_1 + 2 x_2 \le 24 \\
+&amp; x_1,x_2 \ge 0
 \end{aligned}
 \]</div>
-<div class="codehilite"><pre>\begin{aligned}
-\vec{z} &amp;= \vec{a} \\
-\vec{y} &amp;= \frac{\vec{a} \times \vec{b}}{|\vec{a} \times \vec{b}|}  \\
-\vec{x} &amp;= \vec{y} \times \vec{z}
+<h3 id="_4">租借工厂方案<a class="headerlink" href="#_4" title="Permanent link"></a></h3>
+<p>如果我们想租借这个工厂一天，我们需要设计最优的租借方案，使得对方愿意将厂子租借给我们，而我们的租金又是最低的。</p>
+<p>记<span class="arithmatex">\(y_1\)</span>,<span class="arithmatex">\(y_2\)</span>为机器A和机器B每小时的租金。</p>
+<h4 id="_5">令对方满意的条件<a class="headerlink" href="#_5" title="Permanent link"></a></h4>
+<p>让对方满意的条件，我们租借机器的租金，比原厂主自己生产的利润要高。</p>
+<p>条件如下：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+6 y_2 &amp;\ge 2 \\
+5 y_1 + 2 y_2 &amp;\ge 1
 \end{aligned}
-</pre></div>
-
-<p>符号下方加下标：<span class="arithmatex">\(\max\limits_{i=0}^n\)</span> (\max\limits_{i=0}^n)</p></article></body></html>
+\]</div>
+<h4 id="_6">优化函数<a class="headerlink" href="#_6" title="Permanent link"></a></h4>
+<div class="arithmatex">\[
+\begin{aligned}
+\mathop{min}\quad &amp; 15y_1+24y_2 \\
+s.t. \quad &amp; 6 y_2 \ge 2 \\
+&amp; 5 y_1 + 2 y_2 \ge 1 \\
+&amp; y_1,y_2 \ge 0
+\end{aligned}
+\]</div></article></body></html>

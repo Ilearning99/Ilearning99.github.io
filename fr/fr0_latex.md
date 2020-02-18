@@ -10,6 +10,8 @@
 
 取整符号：$\lfloor n \rfloor$ (\lfloor n \rfloor)
 
+空格符号：$\quad$ (\quad)
+
 等式组：
 
 $$
