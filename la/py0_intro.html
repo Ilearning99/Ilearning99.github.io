@@ -1123,9 +1123,48 @@ body .markdown-body
 <h4 id="_5">列表、元组和字符串<a class="headerlink" href="#_5" title="Permanent link"></a></h4>
 <p>列表、元组和字符串都是线性的数据结构。</p>
 <h5 id="_6">列表<a class="headerlink" href="#_6" title="Permanent link"></a></h5>
+<ul>
+<li>定义</li>
+</ul>
+<p>列表通过[]方括号定义，其中包含一系列元素，如下所示：
+<div class="codehilite"><pre><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</pre></div></p>
+<ul>
+<li>列表添加元素</li>
+</ul>
+<p>通过列表对象的append方法，对现有列表添加元素：
+<div class="codehilite"><pre><span class="n">b</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1"># ［10］</span>
+</pre></div></p>
+<ul>
+<li>索引和切片</li>
+</ul>
+<p>可以通过位置索引获取对应位置元素，并对对应元素进行修改，获取列表的切片（连续一段子集，也是列表）：
+<div class="codehilite"><pre><span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 1</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=-</span><span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># [-1,2,3]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># [-1]</span>
+</pre></div></p>
 <h5 id="_7">元组<a class="headerlink" href="#_7" title="Permanent link"></a></h5>
+<p>元组使用()圆括号定义，包含系列元素，可以看作是不可变的列表。</p>
+<p>元组不支持任何对其元素修改的操作，但可以使用索引和切片操作。</p>
+<div class="codehilite"><pre><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># 1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># (1,2)</span>
+</pre></div>
+
 <h5 id="_8">字符串<a class="headerlink" href="#_8" title="Permanent link"></a></h5>
-<h4 id="_9">循环<a class="headerlink" href="#_9" title="Permanent link"></a></h4>
+<p>字符串使用&rdquo;&ldquo;或&rsquo;&lsquo;定义，字符串可以看作是特殊的元组。</p>
+<p>注意：
+- 字符串的每个位置的元素还是一个字符串。
+- 字符串不支持对其修改操作，字符串的拼接操作会在内存中构造一个新的字符串。</p>
+<h5 id="_9">共同支持的操作<a class="headerlink" href="#_9" title="Permanent link"></a></h5>
+<ul>
+<li>len()。返回序列中的元素个数。</li>
+<li>in。一个序列是否包含在另一个序列中。</li>
+</ul>
+<h4 id="_10">循环<a class="headerlink" href="#_10" title="Permanent link"></a></h4>
 <p>编写程序主要是为了解放劳动力，通过计算来执行简单重复的工作。循环语句就是为了解决多次执行简单重复工作的问题。比如，打印0到9999。</p>
 <p>python中有两种循环，for循环和while循环。</p>
 <div class="codehilite"><pre><span class="c1"># for 循环</span>
@@ -1152,16 +1191,16 @@ body .markdown-body
 </li>
 <li>for循环与while循环的关系。如果不知道循环次数，就需要使用while循环，在python中，while循环可以完全替换for循环，但是，使用for循环代码结构更加紧凑清晰，因此在知道循环次数的情况下，都是使用for循环，其它情况使用while循环。</li>
 </ul>
-<h4 id="_10">函数<a class="headerlink" href="#_10" title="Permanent link"></a></h4>
+<h4 id="_11">函数<a class="headerlink" href="#_11" title="Permanent link"></a></h4>
 <p>函数是一个复合语句，是具有特定逻辑功能的代码块，将代码切分成各个功能函数，可以使得程序逻辑更加清晰。如下是一个判断一个数是否为偶数的函数。</p>
 <div class="codehilite"><pre><span class="k">def</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">num</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span>
 </pre></div>
 
 <p>函数以def关键词开始，加函数名，加参数列表，函数结尾是一个return关键词开始的语句，用来返回函数的结果。</p>
-<h5 id="_11">实参和形参<a class="headerlink" href="#_11" title="Permanent link"></a></h5>
+<h5 id="_12">实参和形参<a class="headerlink" href="#_12" title="Permanent link"></a></h5>
 <p>一般，把调用函数时，实际传入的值称为实参，因为，这是函数运行时，实际使用的参数值；把函数里使用的参数变量称为形参。</p>
-<h4 id="_12">类与对象<a class="headerlink" href="#_12" title="Permanent link"></a></h4>
+<h4 id="_13">类与对象<a class="headerlink" href="#_13" title="Permanent link"></a></h4>
 <p>python的类是以class为关键词的复合语句，类是自己定义的一种数据类型，可以定义这种类型包含的信息以及可以执行的操作。</p>
 <div class="codehilite"><pre><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
@@ -1199,7 +1238,7 @@ body .markdown-body
         <span class="bp">self</span><span class="o">.</span><span class="n">owner</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="n">owner</span><span class="p">)</span>
 </pre></div>
 
-<h4 id="_13">导入程序模块<a class="headerlink" href="#_13" title="Permanent link"></a></h4>
+<h4 id="_14">导入程序模块<a class="headerlink" href="#_14" title="Permanent link"></a></h4>
 <p>我们不可能在一个文件中写所有的程序，并且当我们写好一个程序后，我们希望能够尽可能多次利用，就需要在当前文件中导入其它模块，如下。</p>
 <div class="codehilite"><pre><span class="kn">import</span> <span class="nn">turtle</span>
 </pre></div>
@@ -1209,19 +1248,58 @@ body .markdown-body
 <p>python在导入一个文件的过程中，需要运行该文件的所有代码，这有一个问题，比如，我们需要测试这个文件代码，那么，测试完我们需要注释掉这些所有代码吗？这有些麻烦，有什么办法可以解决呢？</p>
 <p>仔细思考这个问题，我们会发现，这两种运行程序的情况是有区别的，当我们希望去测试某段代码时，我们总是从当前文件开始运行，而导入模块是从其它文件import当前文件并运行。python的设计者，通过一个内置属性__name__对这两种情况加以区分。</p>
 <p>对于从命令行运行的情况，__name__的值是字符串&rdquo;__main__&ldquo;；而对于import语句，__name__的值是当前模块名。所以，我们可以通过if语句判断情况，进而运行对应代码。</p>
-<h4 id="_14">总结<a class="headerlink" href="#_14" title="Permanent link"></a></h4>
+<h4 id="_15">总结<a class="headerlink" href="#_15" title="Permanent link"></a></h4>
 <p>总地来说，python程序的语句主要分为两大类，基本语句和复合语句</p>
-<h5 id="_15">基本语句<a class="headerlink" href="#_15" title="Permanent link"></a></h5>
+<h5 id="_16">基本语句<a class="headerlink" href="#_16" title="Permanent link"></a></h5>
 <ul>
 <li>赋值语句。=,+=,-=</li>
 <li>算术运算语句。+,-,*,/,%</li>
 <li>调用函数语句。print,input,&hellip;</li>
 <li>调用类和对象方法语句。</li>
 </ul>
-<h5 id="_16">复合语句<a class="headerlink" href="#_16" title="Permanent link"></a></h5>
+<h5 id="_17">复合语句<a class="headerlink" href="#_17" title="Permanent link"></a></h5>
 <ul>
 <li>循环语句。for/while</li>
 <li>函数定义。def</li>
 <li>类型定义。class</li>
 </ul>
-<h3 id="_17">实践<a class="headerlink" href="#_17" title="Permanent link"></a></h3></article></body></html>
+<h3 id="_18">实践<a class="headerlink" href="#_18" title="Permanent link"></a></h3>
+<h4 id="turtle">turtle包<a class="headerlink" href="#turtle" title="Permanent link"></a></h4>
+<p>python3中会自带一个工具包turtle，可以直接import进来，并在程序中使用。turtle是海龟的意思，它来源于早期的人工智能教育家开发的教学机器人。这个机器人外形像一只海龟，它的尾巴系着一支彩笔，可以控制这个机器人移动，尾巴后面的彩笔会在白纸上画出图案。turtle包有着相似的功能。如下说明：</p>
+<div class="codehilite"><pre><span class="n">gz</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span> <span class="o">//</span> <span class="err">创建</span><span class="n">Turtle对象</span>
+<span class="n">gz</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s">&#39;yellow&#39;</span><span class="p">)</span> <span class="o">//</span> <span class="err">设置颜色</span>
+<span class="n">gz</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">//</span> <span class="err">向前移动</span><span class="mi">100</span><span class="err">个像素</span>
+<span class="n">gz</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span> <span class="o">//</span> <span class="err">向右转</span><span class="mi">90</span><span class="err">度</span>
+<span class="n">gz</span><span class="o">.</span><span class="n">hideturtle</span><span class="p">()</span> <span class="o">//</span> <span class="err">隐藏小乌龟</span>
+<span class="n">gz</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span> <span class="o">//</span> <span class="err">抬起画笔</span>
+<span class="n">gz</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span> <span class="o">//</span> <span class="err">放下画笔</span>
+<span class="n">gz</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">//</span> <span class="err">设置线宽</span><span class="mi">5</span><span class="err">个像素</span>
+</pre></div>
+
+<p>我们可以通过turtle画出很多复杂的图形，示例如下：</p>
+<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">gz</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">gz</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">gz</span><span class="o">.</span><span class="n">width</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">gz</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+    <span class="n">gz</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+<p><img src="./img/turtle.png" width = "400" height = "400" alt="图形效果" align=center /></p>
+<h4 id="_19">爬虫<a class="headerlink" href="#_19" title="Permanent link"></a></h4>
+<p>爬虫主要作用是自动获取页面信息，要完成两件事情，发送http请求，解析html页面，都有对应的python包可以使用</p>
+<h5 id="http">发送http请求<a class="headerlink" href="#http" title="Permanent link"></a></h5>
+<p>使用requests包</p>
+<ul>
+<li>安装requests包，pip3 install requests</li>
+<li>发送http请求，response = requests.get(&ldquo;<a href="http://www.baidu.com">http://www.baidu.com</a>&rdquo;)</li>
+</ul>
+<h5 id="html">解析html文件<a class="headerlink" href="#html" title="Permanent link"></a></h5>
+<p>使用BeautifulSoup包</p>
+<ul>
+<li>安装BeautifulSoup包，pip3 install beautifulsoup4</li>
+<li>解析html文本，soup = BeautifulSoup(response,&rsquo;html.parser&rsquo;)</li>
+</ul></article></body></html>

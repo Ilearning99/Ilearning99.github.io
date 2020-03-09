@@ -50,8 +50,57 @@ b = turtle.Turtle()
 列表、元组和字符串都是线性的数据结构。
 
 ##### 列表
+
+- 定义
+
+列表通过[]方括号定义，其中包含一系列元素，如下所示：
+```.python
+a = [1,2,3]
+```
+
+- 列表添加元素
+
+通过列表对象的append方法，对现有列表添加元素：
+```.python
+b = []
+b.append(10)
+print(b) # ［10］
+```
+
+- 索引和切片
+
+可以通过位置索引获取对应位置元素，并对对应元素进行修改，获取列表的切片（连续一段子集，也是列表）：
+```.python
+print(a[0]) # 1
+a[0]=-1
+print(a) # [-1,2,3]
+print(a[0:1]) # [-1]
+```
+
 ##### 元组
+
+元组使用()圆括号定义，包含系列元素，可以看作是不可变的列表。
+
+元组不支持任何对其元素修改的操作，但可以使用索引和切片操作。
+
+```.python
+a = (1,2,3,4)
+print(a[0]) # 1
+print(a[0:2]) # (1,2)
+```
+
 ##### 字符串
+
+字符串使用""或''定义，字符串可以看作是特殊的元组。
+
+注意：
+- 字符串的每个位置的元素还是一个字符串。
+- 字符串不支持对其修改操作，字符串的拼接操作会在内存中构造一个新的字符串。
+
+##### 共同支持的操作
+
+- len()。返回序列中的元素个数。
+- in。一个序列是否包含在另一个序列中。
 
 #### 循环
 
@@ -185,7 +234,52 @@ python在导入一个文件的过程中，需要运行该文件的所有代码�
 
 ### 实践
 
+#### turtle包
 
+python3中会自带一个工具包turtle，可以直接import进来，并在程序中使用。turtle是海龟的意思，它来源于早期的人工智能教育家开发的教学机器人。这个机器人外形像一只海龟，它的尾巴系着一支彩笔，可以控制这个机器人移动，尾巴后面的彩笔会在白纸上画出图案。turtle包有着相似的功能。如下说明：
 
+```.python
+gz = turtle.Turtle() // 创建Turtle对象
+gz.color('yellow') // 设置颜色
+gz.forward(100) // 向前移动100个像素
+gz.right(90) // 向右转90度
+gz.hideturtle() // 隐藏小乌龟
+gz.penup() // 抬起画笔
+gz.pendown() // 放下画笔
+gz.width(5) // 设置线宽5个像素
+```
 
+我们可以通过turtle画出很多复杂的图形，示例如下：
+
+```.python
+import turtle
+
+gz = turtle.Turtle()
+gz.color("blue")
+gz.width(5)
+
+for i in range(200):
+    gz.right(75)
+    gz.forward(i)
+```
+
+<img src="./img/turtle.png" width = "400" height = "400" alt="图形效果" align=center />
+
+#### 爬虫
+
+爬虫主要作用是自动获取页面信息，要完成两件事情，发送http请求，解析html页面，都有对应的python包可以使用
+
+##### 发送http请求
+
+使用requests包
+
+- 安装requests包，pip3 install requests
+- 发送http请求，response = requests.get("http://www.baidu.com")
+
+##### 解析html文件
+
+使用BeautifulSoup包
+
+- 安装BeautifulSoup包，pip3 install beautifulsoup4
+- 解析html文本，soup = BeautifulSoup(response,'html.parser')
 
