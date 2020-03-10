@@ -239,14 +239,14 @@ python在导入一个文件的过程中，需要运行该文件的所有代码�
 python3中会自带一个工具包turtle，可以直接import进来，并在程序中使用。turtle是海龟的意思，它来源于早期的人工智能教育家开发的教学机器人。这个机器人外形像一只海龟，它的尾巴系着一支彩笔，可以控制这个机器人移动，尾巴后面的彩笔会在白纸上画出图案。turtle包有着相似的功能。如下说明：
 
 ```.python
-gz = turtle.Turtle() // 创建Turtle对象
-gz.color('yellow') // 设置颜色
-gz.forward(100) // 向前移动100个像素
-gz.right(90) // 向右转90度
-gz.hideturtle() // 隐藏小乌龟
-gz.penup() // 抬起画笔
-gz.pendown() // 放下画笔
-gz.width(5) // 设置线宽5个像素
+gz = turtle.Turtle() # 创建Turtle对象
+gz.color('yellow') # 设置颜色
+gz.forward(100) # 向前移动100个像素
+gz.right(90) # 向右转90度
+gz.hideturtle() # 隐藏小乌龟
+gz.penup() # 抬起画笔
+gz.pendown() # 放下画笔
+gz.width(5) # 设置线宽5个像素
 ```
 
 我们可以通过turtle画出很多复杂的图形，示例如下：
