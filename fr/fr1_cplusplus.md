@@ -101,6 +101,8 @@ struct cmp{
     }
 };
 priority_queue<int,vector<int>,cmp> pqmin; //自定义比较函数(小顶堆)
+priority_queue<int,vector<int>,less<int>> pql; // 使用less比较函数(大顶堆)
+priority_queue<int,vector<int>,greater<int>> pqg; // 使用greater比较函数(小顶堆)
 ```
 
 map的遍历
