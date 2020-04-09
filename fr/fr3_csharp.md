@@ -7,11 +7,19 @@
 ### 正则匹配
 
 - 匹配中文 [\u4e00-\u9fa5]
+- 使用命名空间
+```.c
+using System.Text.RegularExpressions;
+```
 
 ### 字符串操作
 
-- 去掉字符串首尾不需要的字符(Trim函数)
+- 去掉字符串首尾不需要的字符，使用String自带的Trim函数
 ```.c
 String message = " abc  ";
 String cleanedMessage = message.Trim(new char[]{' ','/','\\','\''});
 ```
+
+- json字符串解析，使用MongoDB
+
+
