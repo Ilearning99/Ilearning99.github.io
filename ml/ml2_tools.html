@@ -1082,39 +1082,10 @@ body .markdown-body
 .codehilite .vi{color:teal}
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
-</style><title>fr3_csharp</title></head><body><article class="markdown-body"><h1 id="c">C#相关知识<a class="headerlink" href="#c" title="Permanent link"></a></h1>
-<h3 id="_1">查找相关包版本<a class="headerlink" href="#_1" title="Permanent link"></a></h3>
-<p><a href="https://www.nuget.org/">nuget.org</a> 可以查找函数需要的C#包以及相应的最新版本</p>
-<h3 id="_2">正则匹配<a class="headerlink" href="#_2" title="Permanent link"></a></h3>
+</style><title>ml2_tools</title></head><body><article class="markdown-body"><h1 id="_1">机器学习工具包<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+<p>很多机器学习任务，需要依赖现有的工具包进行。</p>
+<h3 id="keras">keras<a class="headerlink" href="#keras" title="Permanent link"></a></h3>
 <ul>
-<li>匹配中文 [\u4e00-\u9fa5]</li>
-<li>使用命名空间
-<div class="codehilite"><pre><span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">RegularExpressions</span><span class="p">;</span>
-</pre></div></li>
-</ul>
-<h3 id="_3">字符串操作<a class="headerlink" href="#_3" title="Permanent link"></a></h3>
-<ul>
-<li>
-<p>去掉字符串首尾不需要的字符，使用String自带的Trim函数
-<div class="codehilite"><pre><span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot; abc  &quot;</span><span class="p">;</span>
-<span class="n">String</span> <span class="n">cleanedMessage</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">Trim</span><span class="p">(</span><span class="n">new</span> <span class="kt">char</span><span class="p">[]{</span><span class="sc">&#39; &#39;</span><span class="p">,</span><span class="sc">&#39;/&#39;</span><span class="p">,</span><span class="sc">&#39;\\&#39;</span><span class="p">,</span><span class="sc">&#39;\&#39;&#39;</span><span class="p">});</span>
-</pre></div></p>
-</li>
-<li>
-<p>json字符串解析，使用MongoDB</p>
-</li>
-</ul>
-<h3 id="_4">循环<a class="headerlink" href="#_4" title="Permanent link"></a></h3>
-<ul>
-<li>for循环
-<div class="codehilite"><pre><span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">item</span> <span class="n">in</span> <span class="n">items</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div></li>
-</ul>
-<h3 id="net">.net源码<a class="headerlink" href="#net" title="Permanent link"></a></h3>
-<ul>
-<li>.net源码下载 <a href="https://referencesource.microsoft.com/download.html">下载地址</a></li>
-<li>.net源码在线阅读 <a href="https://referencesource.microsoft.com/">在线阅读地址</a></li>
+<li>keras文档 <a href="https://keras.io/">在线文档</a></li>
+<li>finetune微调 <a href="https://keras.io/applications/#fine-tune-inceptionv3-on-a-new-set-of-classes">样例</a></li>
 </ul></article></body></html>

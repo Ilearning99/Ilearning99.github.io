@@ -22,4 +22,17 @@ String cleanedMessage = message.Trim(new char[]{' ','/','\\','\''});
 
 - json字符串解析，使用MongoDB
 
+### 循环
+- for循环
+```.c
+foreach (var item in items)
+{
+    Console.WriteLine(item);
+}
+```
+
+### .net源码
+- .net源码下载 [下载地址](https://referencesource.microsoft.com/download.html)
+- .net源码在线阅读 [在线阅读地址](https://referencesource.microsoft.com/)
+
 
