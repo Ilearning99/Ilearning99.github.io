@@ -35,4 +35,36 @@ foreach (var item in items)
 - .net源码下载 [下载地址](https://referencesource.microsoft.com/download.html)
 - .net源码在线阅读 [在线阅读地址](https://referencesource.microsoft.com/)
 
+### 数据结构
+- set
+```.c
+using System.Collections.Generic;
+HashSet<int> sampleSet = new HashSet<int>();
+```
 
+- 空数组
+```.c
+string[] arrA = new string[]{};
+string[] arrB = Array.Empty<string>();
+```
+
+### 函数式编程
+
+- Map
+```.c
+Enumerable.Range(1,10).Select(x => x + 2);
+```
+- Reduce
+```.c
+Enumerable.Range(1,10).Aggregate(0, (acc,x) => acc + x);
+```
+- Filter
+```.c
+Enumerable.Range(1,10).Where(x => x % 2 == 0);
+```
+
+### 正则匹配
+- 替换
+```.c
+message = Regex.Replace(message,@"([0-9]+)x([0-9]+)","$1+$2");
+```

@@ -1082,72 +1082,9 @@ body .markdown-body
 .codehilite .vi{color:teal}
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
-</style><title>fr3_csharp</title></head><body><article class="markdown-body"><h1 id="c">C#相关知识<a class="headerlink" href="#c" title="Permanent link"></a></h1>
-<h3 id="_1">查找相关包版本<a class="headerlink" href="#_1" title="Permanent link"></a></h3>
-<p><a href="https://www.nuget.org/">nuget.org</a> 可以查找函数需要的C#包以及相应的最新版本</p>
-<h3 id="_2">正则匹配<a class="headerlink" href="#_2" title="Permanent link"></a></h3>
+</style><title>bd0_crawler</title></head><body><article class="markdown-body"><h1 id="_1">爬虫<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+<h3 id="_2">工具包<a class="headerlink" href="#_2" title="Permanent link"></a></h3>
 <ul>
-<li>匹配中文 [\u4e00-\u9fa5]</li>
-<li>使用命名空间
-<div class="codehilite"><pre><span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="n">RegularExpressions</span><span class="p">;</span>
-</pre></div></li>
+<li>Scrapy库</li>
 </ul>
-<h3 id="_3">字符串操作<a class="headerlink" href="#_3" title="Permanent link"></a></h3>
-<ul>
-<li>
-<p>去掉字符串首尾不需要的字符，使用String自带的Trim函数
-<div class="codehilite"><pre><span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot; abc  &quot;</span><span class="p">;</span>
-<span class="n">String</span> <span class="n">cleanedMessage</span> <span class="o">=</span> <span class="n">message</span><span class="p">.</span><span class="n">Trim</span><span class="p">(</span><span class="n">new</span> <span class="kt">char</span><span class="p">[]{</span><span class="sc">&#39; &#39;</span><span class="p">,</span><span class="sc">&#39;/&#39;</span><span class="p">,</span><span class="sc">&#39;\\&#39;</span><span class="p">,</span><span class="sc">&#39;\&#39;&#39;</span><span class="p">});</span>
-</pre></div></p>
-</li>
-<li>
-<p>json字符串解析，使用MongoDB</p>
-</li>
-</ul>
-<h3 id="_4">循环<a class="headerlink" href="#_4" title="Permanent link"></a></h3>
-<ul>
-<li>for循环
-<div class="codehilite"><pre><span class="n">foreach</span> <span class="p">(</span><span class="n">var</span> <span class="n">item</span> <span class="n">in</span> <span class="n">items</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div></li>
-</ul>
-<h3 id="net">.net源码<a class="headerlink" href="#net" title="Permanent link"></a></h3>
-<ul>
-<li>.net源码下载 <a href="https://referencesource.microsoft.com/download.html">下载地址</a></li>
-<li>.net源码在线阅读 <a href="https://referencesource.microsoft.com/">在线阅读地址</a></li>
-</ul>
-<h3 id="_5">数据结构<a class="headerlink" href="#_5" title="Permanent link"></a></h3>
-<ul>
-<li>
-<p>set
-<div class="codehilite"><pre><span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">.</span><span class="n">Generic</span><span class="p">;</span>
-<span class="n">HashSet</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sampleSet</span> <span class="o">=</span> <span class="n">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
-</pre></div></p>
-</li>
-<li>
-<p>空数组
-<div class="codehilite"><pre><span class="n">string</span><span class="p">[]</span> <span class="n">arrA</span> <span class="o">=</span> <span class="n">new</span> <span class="n">string</span><span class="p">[]{};</span>
-<span class="n">string</span><span class="p">[]</span> <span class="n">arrB</span> <span class="o">=</span> <span class="n">Array</span><span class="p">.</span><span class="n">Empty</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
-</pre></div></p>
-</li>
-</ul>
-<h3 id="_6">函数式编程<a class="headerlink" href="#_6" title="Permanent link"></a></h3>
-<ul>
-<li>Map
-<div class="codehilite"><pre><span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">).</span><span class="n">Select</span><span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">);</span>
-</pre></div></li>
-<li>Reduce
-<div class="codehilite"><pre><span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">).</span><span class="n">Aggregate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">acc</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">acc</span> <span class="o">+</span> <span class="n">x</span><span class="p">);</span>
-</pre></div></li>
-<li>Filter
-<div class="codehilite"><pre><span class="n">Enumerable</span><span class="p">.</span><span class="n">Range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">).</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
-</pre></div></li>
-</ul>
-<h3 id="_7">正则匹配<a class="headerlink" href="#_7" title="Permanent link"></a></h3>
-<ul>
-<li>替换
-<div class="codehilite"><pre><span class="n">message</span> <span class="o">=</span> <span class="n">Regex</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="err">@</span><span class="s">&quot;([0-9]+)x([0-9]+)&quot;</span><span class="p">,</span><span class="s">&quot;$1+$2&quot;</span><span class="p">);</span>
-</pre></div></li>
-</ul></article></body></html>
+<p>Scrapy库是适用于Python的一个快速、高层次的屏幕抓取和web抓取框架，用于抓取web站点并从页面中提取结构化的数据。Scrapy库用途广泛，可以用于数据挖掘、监测和自动化测试。</p></article></body></html>
