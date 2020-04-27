@@ -51,3 +51,13 @@
 <form action="demo.php" method="post/get">
 </form>
 ```
+
+- html5新标签
+```.html
+<form action="">
+    用户名: <input type='text'/> <br />
+    密&nbsp;&nbsp;&nbsp;码: <input type='password'/> <br />
+    邮&nbsp;&nbsp;&nbsp;箱: <input type='email' /> <br />
+    <input type='submit' />
+</form>
+```

@@ -68,3 +68,7 @@ Enumerable.Range(1,10).Where(x => x % 2 == 0);
 ```.c
 message = Regex.Replace(message,@"([0-9]+)x([0-9]+)","$1+$2");
 ```
+ps: 需要注意原字符串是否有特殊字符需要转义。
+
+### 注意事项
+- Convert.ToBoolean() 函数只接受"true"和"false"字符串进行转换，其它类型会抛出异常
