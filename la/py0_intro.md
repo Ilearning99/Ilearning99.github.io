@@ -207,6 +207,14 @@ import turtle
 
 例如，需要导入的.py为hello.py，那么导入语句应该写成import hello
 
+##### 相对引用
+
+导入当前目录下的模块
+
+```.python
+from .my_file import my_module
+```
+
 ##### __name__属性
 
 python在导入一个文件的过程中，需要运行该文件的所有代码，这有一个问题，比如，我们需要测试这个文件代码，那么，测试完我们需要注释掉这些所有代码吗？这有些麻烦，有什么办法可以解决呢？
@@ -214,6 +222,14 @@ python在导入一个文件的过程中，需要运行该文件的所有代码�
 仔细思考这个问题，我们会发现，这两种运行程序的情况是有区别的，当我们希望去测试某段代码时，我们总是从当前文件开始运行，而导入模块是从其它文件import当前文件并运行。python的设计者，通过一个内置属性__name__对这两种情况加以区分。
 
 对于从命令行运行的情况，\_\_name\_\_的值是字符串"\_\_main\_\_"；而对于import语句，\_\_name\_\_的值是当前模块名。所以，我们可以通过if语句判断情况，进而运行对应代码。
+
+##### setattr
+
+通过setattr给object设置属性和对应的属性值
+
+```.python
+setattr(obj, key, value)
+```
 
 #### 总结
 
@@ -283,3 +299,21 @@ for i in range(200):
 - 安装BeautifulSoup包，pip3 install beautifulsoup4
 - 解析html文本，soup = BeautifulSoup(response,'html.parser')
 
+##### 正则表达式
+
+```.python
+import re
+
+matches = re.search(pattern, string)
+```
+
+## jupyter notebook
+
+### dataframe 展示
+
+- 使用display，在jupyter notebook的cell里可以展示dataframe
+```.python
+import pandas as pd
+data = pd.read_excel('data.xlsx')
+display(data)
+```

@@ -17,3 +17,9 @@ kubectl -n cta delete pods
 ```
 kubectl -n cta get deployment
 ```
+
+### 简单服务
+
+```
+sudo nc -l 80
+```
