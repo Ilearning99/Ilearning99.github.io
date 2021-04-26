@@ -1091,8 +1091,16 @@ body .markdown-body
 .highlight .il{color:#009999}
 .highlight .gc{color:#999;background-color:#EAF2F5}
 </style><title>be2_csweb</title></head><body><article class="markdown-body"><h1 id="c-web">C# web应用<a class="headerlink" href="#c-web" title="Permanent link"></a></h1>
-<h2 id="_1">作用域和对象的释放行为<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
-<h3 id="_2">作用域<a class="headerlink" href="#_2" title="Permanent link"></a></h3>
+<h2 id="_1">依赖注入<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
+<p>依赖注入IoC</p>
+<h3 id="_2">三种模式<a class="headerlink" href="#_2" title="Permanent link"></a></h3>
+<ul>
+<li>单例 整个服务流程中只创建一个实例。</li>
+<li>瞬时 每次请求都会创建一个实例。</li>
+<li>作用域 在作用域内是单例模式。</li>
+</ul>
+<h2 id="_3">作用域和对象的释放行为<a class="headerlink" href="#_3" title="Permanent link"></a></h2>
+<h3 id="_4">作用域<a class="headerlink" href="#_4" title="Permanent link"></a></h3>
 <p>作用域必需实现IServiceScope</p>
-<h3 id="_3">释放行为<a class="headerlink" href="#_3" title="Permanent link"></a></h3>
+<h3 id="_5">释放行为<a class="headerlink" href="#_5" title="Permanent link"></a></h3>
 <p>类实现IDisposable接口，容器能自动释放实现该接口的类的对象，应当避免手动创建对象，使用容器自动创建并管理对象的生命周期。</p></article></body></html>
