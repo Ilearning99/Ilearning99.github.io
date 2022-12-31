@@ -1099,8 +1099,12 @@ body .markdown-body
 <li>瞬时 每次请求都会创建一个实例。</li>
 <li>作用域 在作用域内是单例模式。</li>
 </ul>
-<h2 id="_3">作用域和对象的释放行为<a class="headerlink" href="#_3" title="Permanent link"></a></h2>
-<h3 id="_4">作用域<a class="headerlink" href="#_4" title="Permanent link"></a></h3>
+<h3 id="_3">容器<a class="headerlink" href="#_3" title="Permanent link"></a></h3>
+<ul>
+<li>当前请求的根容器 HttpContext.RequestServices是当前请求的根容器</li>
+</ul>
+<h2 id="_4">作用域和对象的释放行为<a class="headerlink" href="#_4" title="Permanent link"></a></h2>
+<h3 id="_5">作用域<a class="headerlink" href="#_5" title="Permanent link"></a></h3>
 <p>作用域必需实现IServiceScope</p>
-<h3 id="_5">释放行为<a class="headerlink" href="#_5" title="Permanent link"></a></h3>
+<h3 id="_6">释放行为<a class="headerlink" href="#_6" title="Permanent link"></a></h3>
 <p>类实现IDisposable接口，容器能自动释放实现该接口的类的对象，应当避免手动创建对象，使用容器自动创建并管理对象的生命周期。</p></article></body></html>
